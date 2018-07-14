@@ -13,5 +13,94 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Cerasus">
+      <UniqueIdentifier>{72493527-b455-4963-b8b1-3dfbc90dbd9b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cerasusfps.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="CerasusUnit.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectCommon.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectFont.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics2D.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics3D.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectInput.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectMesh.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSafe.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectShow.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSound.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSprite.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSurface.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectTexture.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+    <ClInclude Include="WinMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WinProcess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WinUtilities.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectThreadSafe.h">
+      <Filter>Cerasus</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WinProcess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WinUtilities.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Assistant.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\Marisa.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>
