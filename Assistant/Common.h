@@ -32,8 +32,28 @@
 #include "Cerasusfps.h"
 #include "CerasusUnit.h"
 
+//Include Prunus Win32 Dynamic Link Library
+#include "PlumCommon.h"
+#include "PlumCipherA.h"
+#include "PlumCrypt.h"
+#include "PlumPack.h"
+#include "PlumConsole.h"
+#include "PlumFile.h"
+#include "PlumGraphics.h"
+#include "PlumIni.h"
+#include "PlumLog.h"
+#include "PlumPath.h"
+#include "PlumProcess.h"
+#include "PlumThread.h"
+
+//Include Windows Header File
+#include "WinMain.h"
+#include "WinProcess.h"
+#include "WinUtilities.h"
+
 //Include Common Library
 #pragma comment(lib, "Cerasus.lib")
+#pragma comment(lib, "Prunus.lib")
 
 #endif // !__COMMON_H_
 

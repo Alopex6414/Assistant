@@ -12,6 +12,10 @@
 #include "WinProcess.h"
 #include "WinUtilities.h"
 
+#include "Assistant.h"
+
+CAssistant* g_pAssistant = NULL;
+
 //------------------------------------------------------------------
 // @Function:	 SetWindowParameterCallBack(void)
 // @Purpose: WinMain设置窗口相关参数回调函数
@@ -38,7 +42,8 @@ WndPara* SetWindowParameterCallBack(void)
 //------------------------------------------------------------------
 BOOL InitWindowExtraCallBack(void)
 {
-	return TRUE;
+	g_pAssistant = new CAssistant();
+	return g_pAssistant->AssistantInit();
 }
 
 //------------------------------------------------------------------
@@ -50,7 +55,8 @@ BOOL InitWindowExtraCallBack(void)
 //------------------------------------------------------------------
 void ReleaseWindowExtraCallBack(void)
 {
-	
+	g_pAssistant->AssistantRelease();
+	SAFE_DELETE(g_pAssistant);
 }
 
 //------------------------------------------------------------------
@@ -62,5 +68,6 @@ void ReleaseWindowExtraCallBack(void)
 //------------------------------------------------------------------
 void Direct3DRenderCallBack(void)
 {
-	
+	g_pAssistant->AssistantUpdate();
+	g_pAssistant->AssistantRender();
 }

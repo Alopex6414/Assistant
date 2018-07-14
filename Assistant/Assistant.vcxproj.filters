@@ -16,6 +16,12 @@
     <Filter Include="Cerasus">
       <UniqueIdentifier>{72493527-b455-4963-b8b1-3dfbc90dbd9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Prunus">
+      <UniqueIdentifier>{b0822f79-9dbc-4bc0-bcf9-350c1b18a474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{b5ff5d73-2fb0-4278-9452-28e78fb18711}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cerasusfps.h">
@@ -81,6 +87,126 @@
     <ClInclude Include="DirectThreadSafe.h">
       <Filter>Cerasus</Filter>
     </ClInclude>
+    <ClInclude Include="PlumCipherA.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumCommon.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumConsole.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumCrypt.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumFile.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumGraphics.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumIni.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumLog.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumPack.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumPath.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumProcess.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="PlumThread.h">
+      <Filter>Prunus</Filter>
+    </ClInclude>
+    <ClInclude Include="Assistant.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AssistantStart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lapi.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lauxlib.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lcode.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lctype.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\ldebug.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\ldo.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lfunc.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lgc.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\llex.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\llimits.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lmem.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lobject.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lopcodes.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lparser.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lprefix.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lstate.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lstring.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\ltable.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\ltm.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lua.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lua.hpp">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\luaconf.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lualib.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lundump.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lvm.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\header\lzio.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -90,6 +216,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="WinUtilities.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Assistant.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AssistantStart.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

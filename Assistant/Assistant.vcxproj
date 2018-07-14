@@ -127,6 +127,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Lua\header\lapi.h" />
+    <ClInclude Include="..\Lua\header\lauxlib.h" />
+    <ClInclude Include="..\Lua\header\lcode.h" />
+    <ClInclude Include="..\Lua\header\lctype.h" />
+    <ClInclude Include="..\Lua\header\ldebug.h" />
+    <ClInclude Include="..\Lua\header\ldo.h" />
+    <ClInclude Include="..\Lua\header\lfunc.h" />
+    <ClInclude Include="..\Lua\header\lgc.h" />
+    <ClInclude Include="..\Lua\header\llex.h" />
+    <ClInclude Include="..\Lua\header\llimits.h" />
+    <ClInclude Include="..\Lua\header\lmem.h" />
+    <ClInclude Include="..\Lua\header\lobject.h" />
+    <ClInclude Include="..\Lua\header\lopcodes.h" />
+    <ClInclude Include="..\Lua\header\lparser.h" />
+    <ClInclude Include="..\Lua\header\lprefix.h" />
+    <ClInclude Include="..\Lua\header\lstate.h" />
+    <ClInclude Include="..\Lua\header\lstring.h" />
+    <ClInclude Include="..\Lua\header\ltable.h" />
+    <ClInclude Include="..\Lua\header\ltm.h" />
+    <ClInclude Include="..\Lua\header\lua.h" />
+    <ClInclude Include="..\Lua\header\lua.hpp" />
+    <ClInclude Include="..\Lua\header\luaconf.h" />
+    <ClInclude Include="..\Lua\header\lualib.h" />
+    <ClInclude Include="..\Lua\header\lundump.h" />
+    <ClInclude Include="..\Lua\header\lvm.h" />
+    <ClInclude Include="..\Lua\header\lzio.h" />
+    <ClInclude Include="Assistant.h" />
+    <ClInclude Include="AssistantStart.h" />
     <ClInclude Include="Cerasusfps.h" />
     <ClInclude Include="CerasusUnit.h" />
     <ClInclude Include="Common.h" />
@@ -144,12 +172,26 @@
     <ClInclude Include="DirectSurface.h" />
     <ClInclude Include="DirectTexture.h" />
     <ClInclude Include="DirectThreadSafe.h" />
+    <ClInclude Include="PlumCipherA.h" />
+    <ClInclude Include="PlumCommon.h" />
+    <ClInclude Include="PlumConsole.h" />
+    <ClInclude Include="PlumCrypt.h" />
+    <ClInclude Include="PlumFile.h" />
+    <ClInclude Include="PlumGraphics.h" />
+    <ClInclude Include="PlumIni.h" />
+    <ClInclude Include="PlumLog.h" />
+    <ClInclude Include="PlumPack.h" />
+    <ClInclude Include="PlumPath.h" />
+    <ClInclude Include="PlumProcess.h" />
+    <ClInclude Include="PlumThread.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="WinMain.h" />
     <ClInclude Include="WinProcess.h" />
     <ClInclude Include="WinUtilities.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Assistant.cpp" />
+    <ClCompile Include="AssistantStart.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="WinProcess.cpp" />
     <ClCompile Include="WinUtilities.cpp" />

@@ -36,11 +36,11 @@
 #define DIRECTGRAPHICS_CALLMODE	__stdcall
 
 #ifndef USER_SCREENWIDTH
-#define USER_SCREENWIDTH	640		//UserScreenWidth(~窗口区域宽度)
+#define USER_SCREENWIDTH	960		//UserScreenWidth(~窗口区域宽度)
 #endif
 
 #ifndef USER_SCREENHEIGHT
-#define USER_SCREENHEIGHT	480		//UserScreenHeight(~窗口区域高度)
+#define USER_SCREENHEIGHT	720		//UserScreenHeight(~窗口区域高度)
 #endif
 
 #define ADAPTERTYPESIZE		64		//AdapterType Size(~存储显卡型号数组)
