@@ -161,6 +161,7 @@
     <ClInclude Include="..\Lua\header\lzio.h" />
     <ClInclude Include="Assistant.h" />
     <ClInclude Include="AssistantLua.h" />
+    <ClInclude Include="AssistantMain.h" />
     <ClInclude Include="AssistantStart.h" />
     <ClInclude Include="Cerasusfps.h" />
     <ClInclude Include="CerasusUnit.h" />
@@ -199,6 +200,7 @@
   <ItemGroup>
     <ClCompile Include="Assistant.cpp" />
     <ClCompile Include="AssistantLua.cpp" />
+    <ClCompile Include="AssistantMain.cpp" />
     <ClCompile Include="AssistantStart.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="WinProcess.cpp" />

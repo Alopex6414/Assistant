@@ -210,6 +210,9 @@
     <ClInclude Include="AssistantLua.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AssistantMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -228,6 +231,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="AssistantLua.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AssistantMain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

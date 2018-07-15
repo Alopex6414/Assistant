@@ -216,7 +216,7 @@ void CAssistantStart::AssistantStartUpdate(float fDeltaTime)
 
 	fTimeSum += fDeltaTime;
 
-	if (fTimeSum < 0.5f)	//开始时间0.0s~0.1s时保持黑色屏幕,Alpha通道值为0.0f
+	if (fTimeSum < 0.5f)	//开始时间0.0s~0.5s时保持黑色屏幕,Alpha通道值为0.0f
 	{
 		m_pMainBackGround->CCerasusUnitGetAlpha() = 0.0f;	//背景Alpha通道值为0.0f
 		m_pMainLogo->CCerasusUnitGetAlpha() = 0.0f;			//LogoAlpha通道值为0.0f
@@ -225,7 +225,7 @@ void CAssistantStart::AssistantStartUpdate(float fDeltaTime)
 		m_pMainLogo->CCerasusUnitGetTranslateZ() = -100.0f;
 		m_pMainCopy->CCerasusUnitGetTranslateZ() = -100.0f;
 	}
-	else if (fTimeSum < 3.0f)	//开始时间0.1s~0.5s时背景渐变,Alpha通道值增加
+	else if (fTimeSum < 3.0f)	//开始时间0.5s~3.0s时背景渐变,Alpha通道值增加
 	{
 		//Alapha通道值变化
 		m_pMainBackGround->CCerasusUnitGetAlpha() += 0.01f;
