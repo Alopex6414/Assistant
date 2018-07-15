@@ -24,6 +24,7 @@ CAssistantStart::CAssistantStart()
 	m_pMainBackGround = NULL;
 	m_pMainLogo = NULL;
 	m_pMainCopy = NULL;
+	m_pMainLua = NULL;
 }
 
 //------------------------------------------------------------------
@@ -35,6 +36,7 @@ CAssistantStart::CAssistantStart()
 //------------------------------------------------------------------
 CAssistantStart::~CAssistantStart()
 {
+	SAFE_DELETE(m_pMainLua);
 	SAFE_DELETE(m_pMainCopy);
 	SAFE_DELETE(m_pMainLogo);
 	SAFE_DELETE(m_pMainBackGround);
@@ -53,6 +55,7 @@ CAssistantStart::CAssistantStart(IDirect3DDevice9* pD3D9Device)
 	m_pMainBackGround = NULL;
 	m_pMainLogo = NULL;
 	m_pMainCopy = NULL;
+	m_pMainLua = NULL;
 }
 
 //------------------------------------------------------------------
@@ -65,6 +68,15 @@ CAssistantStart::CAssistantStart(IDirect3DDevice9* pD3D9Device)
 BOOL CAssistantStart::AssistantStartInit()
 {
 	HRESULT hr;
+
+	//初始化lua脚本
+	BOOL bRet = FALSE;
+	m_pMainLua = new CAssistantLua("\\script\\AssistantStart.lua");
+	bRet = m_pMainLua->AssistantLuaInit();
+	if (!bRet)
+	{
+		return FALSE;
+	}
 
 	//PlumPack解包纹理
 	CPlumPack cPlumPackBack;
@@ -198,8 +210,65 @@ void CAssistantStart::AssistantStartReset()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CAssistantStart::AssistantStartUpdate()
+void CAssistantStart::AssistantStartUpdate(float fDeltaTime)
 {
+	static float fTimeSum = 0.0f;
+
+	fTimeSum += fDeltaTime;
+
+	if (fTimeSum < 0.5f)	//开始时间0.0s~0.1s时保持黑色屏幕,Alpha通道值为0.0f
+	{
+		m_pMainBackGround->CCerasusUnitGetAlpha() = 0.0f;	//背景Alpha通道值为0.0f
+		m_pMainLogo->CCerasusUnitGetAlpha() = 0.0f;			//LogoAlpha通道值为0.0f
+		m_pMainCopy->CCerasusUnitGetAlpha() = 0.0f;			//版权Alpha通道值为0.0f
+
+		m_pMainLogo->CCerasusUnitGetTranslateZ() = -100.0f;
+		m_pMainCopy->CCerasusUnitGetTranslateZ() = -100.0f;
+	}
+	else if (fTimeSum < 3.0f)	//开始时间0.1s~0.5s时背景渐变,Alpha通道值增加
+	{
+		//Alapha通道值变化
+		m_pMainBackGround->CCerasusUnitGetAlpha() += 0.01f;
+		if (m_pMainBackGround->CCerasusUnitGetAlpha() >= 1.0f)
+		{
+			m_pMainBackGround->CCerasusUnitGetAlpha() = 1.0f;
+		}
+
+		m_pMainLogo->CCerasusUnitGetAlpha() += 0.01f;
+		if (m_pMainLogo->CCerasusUnitGetAlpha() >= 1.0f)
+		{
+			m_pMainLogo->CCerasusUnitGetAlpha() = 1.0f;
+		}
+
+		m_pMainCopy->CCerasusUnitGetAlpha() += 0.01f;
+		if (m_pMainCopy->CCerasusUnitGetAlpha() >= 1.0f)
+		{
+			m_pMainCopy->CCerasusUnitGetAlpha() = 1.0f;
+		}
+
+		//图元位移变换
+		m_pMainLogo->CCerasusUnitGetTranslateZ() += 1.0f;
+		if (m_pMainLogo->CCerasusUnitGetTranslateZ() >= -1.0f)
+		{
+			m_pMainLogo->CCerasusUnitGetTranslateZ() = -1.0f;
+		}
+
+		m_pMainCopy->CCerasusUnitGetTranslateZ() += 1.0f;
+		if (m_pMainCopy->CCerasusUnitGetTranslateZ() >= -1.0f)
+		{
+			m_pMainCopy->CCerasusUnitGetTranslateZ() = -1.0f;
+		}
+	}
+	else
+	{
+		m_pMainBackGround->CCerasusUnitGetAlpha() = 1.0f;	//背景Alpha通道值为0.0f
+		m_pMainLogo->CCerasusUnitGetAlpha() = 1.0f;			//LogoAlpha通道值为0.0f
+		m_pMainCopy->CCerasusUnitGetAlpha() = 1.0f;			//版权Alpha通道值为0.0f
+
+		m_pMainLogo->CCerasusUnitGetTranslateZ() = -1.0f;
+		m_pMainCopy->CCerasusUnitGetTranslateZ() = -1.0f;
+	}
+
 	m_pMainBackGround->CCerasusUnitPaddingVertexAndIndex();
 	m_pMainLogo->CCerasusUnitPaddingVertexAndIndex();
 	m_pMainCopy->CCerasusUnitPaddingVertexAndIndex();
@@ -212,7 +281,7 @@ void CAssistantStart::AssistantStartUpdate()
 // @Para: None
 // @Return: None
 //------------------------------------------------------------------
-void CAssistantStart::AssistantStartRender()
+void CAssistantStart::AssistantStartRender(float fDeltaTime)
 {
 	m_pMainBackGround->CCerasusUnitMatrixTransform();
 	m_pMainBackGround->CCerasusUnitSetAlphaBlendEnable();

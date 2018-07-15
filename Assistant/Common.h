@@ -46,6 +46,9 @@
 #include "PlumProcess.h"
 #include "PlumThread.h"
 
+//Include Lua Script Header File
+#include "lua.hpp"
+
 //Include Windows Header File
 #include "WinMain.h"
 #include "WinProcess.h"
@@ -54,6 +57,7 @@
 //Include Common Library
 #pragma comment(lib, "Cerasus.lib")
 #pragma comment(lib, "Prunus.lib")
+#pragma comment(lib, "liblua.lib")
 
 #endif // !__COMMON_H_
 

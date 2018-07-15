@@ -29,6 +29,9 @@ private:
 private:
 	CCerasusfps* m_pCerasusfps;
 
+private:
+	float m_fTimeSum;
+
 public:
 	CAssistantStart* m_pAssistantStart;
 

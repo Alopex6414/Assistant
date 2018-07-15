@@ -17,6 +17,9 @@
 //Include Common Header File
 #include "Common.h"
 
+//Include AssistantLua Header File
+#include "AssistantLua.h"
+
 //Class Definition
 class CAssistantStart
 {
@@ -28,6 +31,9 @@ private:
 	CCerasusUnit* m_pMainLogo;			//开始界面logo
 	CCerasusUnit* m_pMainCopy;			//开始界面copy
 
+protected:
+	CAssistantLua* m_pMainLua;			//Lua Script
+
 public:
 	CAssistantStart();
 	~CAssistantStart();
@@ -36,8 +42,8 @@ public:
 
 	BOOL AssistantStartInit();
 	void AssistantStartReset();
-	void AssistantStartUpdate();
-	void AssistantStartRender();
+	void AssistantStartUpdate(float fDeltaTime);
+	void AssistantStartRender(float fDeltaTime);
 
 };
 

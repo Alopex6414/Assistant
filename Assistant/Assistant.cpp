@@ -24,6 +24,8 @@ CAssistant::CAssistant()
 	m_pCerasusfps = NULL;
 
 	m_pAssistantStart = NULL;
+
+	m_fTimeSum = 0.0f;
 }
 
 //------------------------------------------------------------------
@@ -134,7 +136,9 @@ void CAssistant::AssistantUpdate()
 
 	}
 
-	m_pAssistantStart->AssistantStartUpdate();
+	m_fTimeSum += g_fDeltaTime;
+
+	m_pAssistantStart->AssistantStartUpdate(g_fDeltaTime);
 
 }
 
@@ -150,7 +154,7 @@ void CAssistant::AssistantRender()
 	m_pDirectGraphics->DirectGraphicsBegin();
 
 	//AssistantStart绘制场景
-	m_pAssistantStart->AssistantStartRender();
+	m_pAssistantStart->AssistantStartRender(g_fDeltaTime);
 
 	//DirectGraphics绘制信息
 	AssistantDrawStatic();
