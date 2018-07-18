@@ -123,6 +123,18 @@ BOOL CAssistantMain::AssistantMainInit()
 	int nBackMenuHeight = 0;
 	int nBackMenuTextureWidth = 0;
 	int nBackMenuTextureHeight = 0;
+	int nLogoX = 0;
+	int nLogoY = 0;
+	int nLogoWidth = 0;
+	int nLogoHeight = 0;
+	int nLogoTextureWidth = 0;
+	int nLogoTextureHeight = 0;
+	int nAppX = 0;
+	int nAppY = 0;
+	int nAppWidth = 0;
+	int nAppHeight = 0;
+	int nAppTextureWidth = 0;
+	int nAppTextureHeight = 0;
 
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackGroundWidth", nBackGroundWidth);
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackGroundHeight", nBackGroundHeight);
@@ -133,6 +145,20 @@ BOOL CAssistantMain::AssistantMainInit()
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuHeight", nBackMenuHeight);
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuTextureWidth", nBackMenuTextureWidth);
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuTextureHeight", nBackMenuTextureHeight);
+
+	m_pMainLua->AssistantLuaGetGlobalInt("MainLogoPosX", nLogoX);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainLogoPosY", nLogoY);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainLogoWidth", nLogoWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainLogoHeight", nLogoHeight);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainLogoTextureWidth", nLogoTextureWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainLogoTextureHeight", nLogoTextureHeight);
+
+	m_pMainLua->AssistantLuaGetGlobalInt("MainAppPosX", nAppX);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainAppPosY", nAppY);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainAppWidth", nAppWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainAppHeight", nAppHeight);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainAppTextureWidth", nAppTextureWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainAppTextureHeight", nAppTextureHeight);
 
 	//初始化参数
 	CUUintEx sUintBack = { 0 };
@@ -175,6 +201,78 @@ BOOL CAssistantMain::AssistantMainInit()
 	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateY = 0.0f;
 	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateZ = 0.0f;
 
+	CUUintEx sUintLogo = { 0 };
+	sUintLogo.nScreenWidth = USER_SCREENWIDTH;
+	sUintLogo.nScreenHeight = USER_SCREENHEIGHT;
+	sUintLogo.pTextureArr = chLogoTex;
+	sUintLogo.nTextureArrSize = sizeof(chLogoTex);
+	sUintLogo.nTextureWidth = nLogoTextureWidth;
+	sUintLogo.nTextureHeight = nLogoTextureHeight;
+	sUintLogo.rcUnit = { nLogoX, nLogoY, nLogoX + nLogoWidth, nLogoY + nLogoHeight };
+	sUintLogo.rcUnitTex = { 0, 0, nLogoWidth, nLogoHeight };
+	sUintLogo.fUnitAlpha = 1.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleX = 1.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleY = 1.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleZ = 1.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateX = 0.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateY = 0.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateZ = 0.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateX = 0.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateY = 0.0f;
+	sUintLogo.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateZ = 0.0f;
+
+	CUUintEx sUintApp = { 0 };
+	sUintApp.nScreenWidth = USER_SCREENWIDTH;
+	sUintApp.nScreenHeight = USER_SCREENHEIGHT;
+	sUintApp.pTextureArr = chAppTex;
+	sUintApp.nTextureArrSize = sizeof(chAppTex);
+	sUintApp.nTextureWidth = nAppTextureWidth;
+	sUintApp.nTextureHeight = nAppTextureHeight;
+	sUintApp.rcUnit = { nAppX, nAppY, nAppX + nAppWidth, nAppY + nAppHeight };
+	sUintApp.rcUnitTex = { 0, 0, nAppWidth, nAppHeight };
+	sUintApp.fUnitAlpha = 1.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleX = 1.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleY = 1.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleZ = 1.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateX = 0.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateY = 0.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateZ = 0.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateX = 0.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateY = 0.0f;
+	sUintApp.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateZ = 0.0f;
+
+	//CCerasusUnit初始化背景
+	m_pMainBackGround = new CCerasusUnit(m_pD3D9Device);
+	hr = m_pMainBackGround->CCerasusUnitInit(sUintBack);
+	if (FAILED(hr))
+	{
+		return FALSE;
+	}
+
+	//CCerasusUnit初始化菜单
+	m_pMainBackMenu = new CCerasusUnit(m_pD3D9Device);
+	hr = m_pMainBackMenu->CCerasusUnitInit(sUintMenu);
+	if (FAILED(hr))
+	{
+		return FALSE;
+	}
+
+	//CCerasusUnit初始化Logo
+	m_pMainLogo = new CCerasusUnit(m_pD3D9Device);
+	hr = m_pMainLogo->CCerasusUnitInit(sUintLogo);
+	if (FAILED(hr))
+	{
+		return FALSE;
+	}
+
+	//CCerasusUnit初始化App
+	m_pMainApps = new CCerasusUnit(m_pD3D9Device);
+	hr = m_pMainApps->CCerasusUnitInit(sUintApp);
+	if (FAILED(hr))
+	{
+		return FALSE;
+	}
+
 	return TRUE;
 }
 
@@ -187,6 +285,10 @@ BOOL CAssistantMain::AssistantMainInit()
 //------------------------------------------------------------------
 void CAssistantMain::AssistantMainReset()
 {
+	m_pMainBackGround->CCerasusUnitReset();
+	m_pMainBackMenu->CCerasusUnitReset();
+	m_pMainLogo->CCerasusUnitReset();
+	m_pMainApps->CCerasusUnitReset();
 }
 
 //------------------------------------------------------------------
