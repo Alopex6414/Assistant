@@ -117,10 +117,63 @@ BOOL CAssistantMain::AssistantMainInit()
 	//Lua参数读取
 	int nBackGroundWidth = 0;
 	int nBackGroundHeight = 0;
+	int nBackGroundTextureWidth = 0;
+	int nBackGroundTextureHeight = 0;
+	int nBackMenuWidth = 0;
+	int nBackMenuHeight = 0;
+	int nBackMenuTextureWidth = 0;
+	int nBackMenuTextureHeight = 0;
+
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackGroundWidth", nBackGroundWidth);
 	m_pMainLua->AssistantLuaGetGlobalInt("MainBackGroundHeight", nBackGroundHeight);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainBackTextureWidth", nBackGroundTextureWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainBackTextureHeight", nBackGroundTextureHeight);
+
+	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuWidth", nBackMenuWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuHeight", nBackMenuHeight);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuTextureWidth", nBackMenuTextureWidth);
+	m_pMainLua->AssistantLuaGetGlobalInt("MainBackMenuTextureHeight", nBackMenuTextureHeight);
 
 	//初始化参数
+	CUUintEx sUintBack = { 0 };
+	sUintBack.nScreenWidth = USER_SCREENWIDTH;
+	sUintBack.nScreenHeight = USER_SCREENHEIGHT;
+	sUintBack.pTextureArr = chBackGroundTex;
+	sUintBack.nTextureArrSize = sizeof(chBackGroundTex);
+	sUintBack.nTextureWidth = nBackGroundTextureWidth;
+	sUintBack.nTextureHeight = nBackGroundTextureHeight;
+	sUintBack.rcUnit = { 0, 0, nBackGroundWidth, nBackGroundHeight };
+	sUintBack.rcUnitTex = { 0, 0, nBackGroundWidth, nBackGroundHeight };
+	sUintBack.fUnitAlpha = 1.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleX = 1.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleY = 1.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleZ = 1.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateX = 0.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateY = 0.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateZ = 0.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateX = 0.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateY = 0.0f;
+	sUintBack.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateZ = 0.0f;
+
+	CUUintEx sUintMenu = { 0 };
+	sUintMenu.nScreenWidth = USER_SCREENWIDTH;
+	sUintMenu.nScreenHeight = USER_SCREENHEIGHT;
+	sUintMenu.pTextureArr = chBackMenuTex;
+	sUintMenu.nTextureArrSize = sizeof(chBackMenuTex);
+	sUintMenu.nTextureWidth = nBackMenuTextureWidth;
+	sUintMenu.nTextureHeight = nBackMenuTextureHeight;
+	sUintMenu.rcUnit = { 0, 0, nBackMenuWidth, nBackMenuHeight };
+	sUintMenu.rcUnitTex = { 0, 0, nBackMenuWidth, nBackMenuHeight };
+	sUintMenu.fUnitAlpha = 1.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleX = 1.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleY = 1.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sScalePara.fScaleZ = 1.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateX = 0.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateY = 0.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sRotatePara.fRotateZ = 0.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateX = 0.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateY = 0.0f;
+	sUintMenu.sCoordsTransformPara.sWorldTransformPara.sTranslatePara.fTranslateZ = 0.0f;
 
 	return TRUE;
 }
