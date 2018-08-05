@@ -259,7 +259,7 @@ void CAssistantStart::AssistantStartUpdate(float fDeltaTime)
 			m_pMainCopy->CCerasusUnitGetTranslateZ() = -1.0f;
 		}
 	}
-	else
+	else if(fTimeSum < 5.0f)	//开始时间3.0s~5.0s时背景保持原状,Alpha通道值不变
 	{
 		m_pMainBackGround->CCerasusUnitGetAlpha() = 1.0f;	//背景Alpha通道值为0.0f
 		m_pMainLogo->CCerasusUnitGetAlpha() = 1.0f;			//LogoAlpha通道值为0.0f
@@ -267,6 +267,47 @@ void CAssistantStart::AssistantStartUpdate(float fDeltaTime)
 
 		m_pMainLogo->CCerasusUnitGetTranslateZ() = -1.0f;
 		m_pMainCopy->CCerasusUnitGetTranslateZ() = -1.0f;
+	}
+	else
+	{
+		//背景开始向左移动,直到变成菜单栏
+		m_pMainBackGround->CCerasusUnitGetTranslateX() -= 8.0f;//100
+		if (m_pMainBackGround->CCerasusUnitGetTranslateX() <= -800.0f)
+		{
+			m_pMainBackGround->CCerasusUnitGetTranslateX() = -800.0f;
+		}
+
+		//Logo开始比例缩小,向Logo方向移动
+		m_pMainLogo->CCerasusUnitGetScaleX() -= 0.006712f;
+		if (m_pMainLogo->CCerasusUnitGetScaleX() <= 0.328767f)
+		{
+			m_pMainLogo->CCerasusUnitGetScaleX() = 0.328767f;
+		}
+
+		m_pMainLogo->CCerasusUnitGetScaleY() -= 0.006615f;
+		if (m_pMainLogo->CCerasusUnitGetScaleY() <= 0.338461f)
+		{
+			m_pMainLogo->CCerasusUnitGetScaleY() = 0.338461f;
+		}
+
+		m_pMainLogo->CCerasusUnitGetTranslateX() -= 2.77f;
+		if (m_pMainLogo->CCerasusUnitGetTranslateX() <= 20.0f)
+		{
+			m_pMainLogo->CCerasusUnitGetTranslateX() = 20.0f;
+		}
+
+		m_pMainLogo->CCerasusUnitGetTranslateY() -= 2.82f;
+		if (m_pMainLogo->CCerasusUnitGetTranslateY() <= 13.0f)
+		{
+			m_pMainLogo->CCerasusUnitGetTranslateY() = 13.0f;
+		}
+
+		//Copyright开始减淡Alpha通道值
+		m_pMainCopy->CCerasusUnitGetAlpha() -= 0.05f;
+		if (m_pMainCopy->CCerasusUnitGetAlpha() <= 0.0f)
+		{
+			m_pMainCopy->CCerasusUnitGetAlpha() = 0.0f;
+		}
 	}
 
 	m_pMainBackGround->CCerasusUnitPaddingVertexAndIndex();

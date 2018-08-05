@@ -19,6 +19,7 @@
 
 //Include Assistant Header File
 #include "AssistantStart.h"
+#include "AssistantMain.h"
 
 //Class Definition
 class CAssistant
@@ -34,6 +35,7 @@ private:
 
 public:
 	CAssistantStart* m_pAssistantStart;
+	CAssistantMain* m_pAssistantMain;
 
 protected:
 	void AssistantDrawStatic();

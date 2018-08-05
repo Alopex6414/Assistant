@@ -24,6 +24,7 @@ CAssistant::CAssistant()
 	m_pCerasusfps = NULL;
 
 	m_pAssistantStart = NULL;
+	m_pAssistantMain = NULL;
 
 	m_fTimeSum = 0.0f;
 }
@@ -37,6 +38,7 @@ CAssistant::CAssistant()
 //------------------------------------------------------------------
 CAssistant::~CAssistant()
 {
+	SAFE_DELETE(m_pAssistantMain);
 	SAFE_DELETE(m_pAssistantStart);
 
 	SAFE_DELETE(m_pCerasusfps);
@@ -86,6 +88,14 @@ BOOL CAssistant::AssistantInit()
 	//AssistantStart初始化
 	m_pAssistantStart = new CAssistantStart(pD3D9Device);
 	bRet = m_pAssistantStart->AssistantStartInit();
+	if (!bRet)
+	{
+		return FALSE;
+	}
+
+	//AssistantMain初始化
+	m_pAssistantMain = new CAssistantMain(pD3D9Device);
+	bRet = m_pAssistantMain->AssistantMainInit();
 	if (!bRet)
 	{
 		return FALSE;
