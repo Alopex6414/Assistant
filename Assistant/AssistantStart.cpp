@@ -290,16 +290,16 @@ void CAssistantStart::AssistantStartUpdate(float fDeltaTime)
 			m_pMainLogo->CCerasusUnitGetScaleY() = 0.338461f;
 		}
 
-		m_pMainLogo->CCerasusUnitGetTranslateX() -= 2.77f;
-		if (m_pMainLogo->CCerasusUnitGetTranslateX() <= 20.0f)
+		m_pMainLogo->CCerasusUnitGetTranslateX() -= 4.00f;
+		if (m_pMainLogo->CCerasusUnitGetTranslateX() <= -400.0f)
 		{
-			m_pMainLogo->CCerasusUnitGetTranslateX() = 20.0f;
+			m_pMainLogo->CCerasusUnitGetTranslateX() = -400.0f;
 		}
 
-		m_pMainLogo->CCerasusUnitGetTranslateY() -= 2.82f;
-		if (m_pMainLogo->CCerasusUnitGetTranslateY() <= 13.0f)
+		m_pMainLogo->CCerasusUnitGetTranslateY() += 3.20;
+		if (m_pMainLogo->CCerasusUnitGetTranslateY() >= 320.0f)
 		{
-			m_pMainLogo->CCerasusUnitGetTranslateY() = 13.0f;
+			m_pMainLogo->CCerasusUnitGetTranslateY() = 320.0f;
 		}
 
 		//Copyright开始减淡Alpha通道值
